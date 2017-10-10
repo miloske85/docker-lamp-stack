@@ -8,3 +8,5 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install mysqli
 RUN mkdir -p /var/log/php
 COPY files/php.ini /usr/local/etc/php
+RUN a2enmod rewrite
+COPY files/apache2.conf /etc/apache2

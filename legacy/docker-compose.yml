@@ -6,10 +6,10 @@ services:
         volumes:
             - db_data_56:/var/lib/mysql
         ports:
-            - "16306:3306"
+            - "15306:3306"
         environment:
             MYSQL_ROOT_PASSWORD: 124
-            MYSQL_DATABASE: test 
+            MYSQL_DATABASE: test
             MYSQL_USER: dbuser
             MYSQL_PASSWORD: dbpass
 
@@ -20,9 +20,9 @@ services:
             context: .
             dockerfile: files/php-Dockerfile
         ports:
-            - "16080:80"
+            - "15080:80"
         volumes:
-            - /tmp:/var/www/html
+            - /tmp/web-legacy:/var/www/html
 
 volumes:
     db_data_56:
